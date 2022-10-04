@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  min = 1;
+  max = 50;
   constructor() {}
-
+  
+  
 }
