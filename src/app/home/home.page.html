@@ -10,31 +10,19 @@
       <ion-title size="large">NumberQuiz</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <div id="container">
     <ion-card>
       <ion-card-header>
-        
-        <ion-card-title
-          >Adivina un número aleatorio entre el 1 y el 50.</ion-card-title
-        >
+        <ion-card-title>Adivina un número aleatorio entre el 1 y el 100.</ion-card-title>
         <ion-card-subtitle>¿Podrás con ello?</ion-card-subtitle>
       </ion-card-header>
-
       <ion-card-content>
-        <ion-input placeholder="0" type="number"></ion-input>
+        <ion-input max="100" min="0"  type="number"  [(ngModel)]="numberUser" (keyup.enter)="checkNumber(numberUser)" required></ion-input>
       </ion-card-content>
     </ion-card>
-    <p>El {{numeroIntroducido}} es {{pista}} el numero secreto</p>
-
+    <p>El {{numberUser}}, {{clue}} </p>
     <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-button shape="round" expand="block" fill="outline" color="success" (click)="CheckNumbers()">Check</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button shape="round" expand="block" fill="outline" color="warning" (click)="resetPage()">Reset</ion-button></ion-col>
-      </ion-row>
+      <ion-button shape="round" expand="expand" fill="outline" color="success" (click)="checkNumber(numberUser)">Check</ion-button>
     </ion-grid>
   </div>
 </ion-content>
