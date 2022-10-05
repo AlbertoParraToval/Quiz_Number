@@ -11,15 +11,24 @@
     </ion-toolbar>
   </ion-header>
   <div id="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Adivina un número aleatorio entre el 1 y el 100.</ion-card-title>
-        <ion-card-subtitle>¿Podrás con ello?</ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-input max="100" min="0"  type="number"  [(ngModel)]="numberUser" (keyup.enter)="checkNumber(numberUser)" required></ion-input>
-      </ion-card-content>
-    </ion-card>
+    <ion-grid>
+      <ion-col></ion-col>
+      <ion-col class="ion-align-self-center ion-align-items-center">
+        <img src="../../assets/images/quiz_number.jpg">
+      </ion-col>
+      <ion-col></ion-col>
+      <div></div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Adivina un número aleatorio entre el 1 y el 100.</ion-card-title>
+              <ion-card-subtitle>¿Podrás con ello?</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-input max="100" min="0"  type="number"  [(ngModel)]="numberUser" (keyup.enter)="checkNumber(numberUser)" required></ion-input>
+            </ion-card-content>
+          </ion-card>
+
+    </ion-grid>
     <p>El {{numberUser}}, {{clue}} </p>
     <ion-grid>
       <ion-button appHighlight defaultColor="green"  expand="expand" fill="clear" color="dark" (click)="checkNumber(numberUser)">Check</ion-button>
